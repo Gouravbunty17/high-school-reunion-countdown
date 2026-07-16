@@ -5,7 +5,7 @@ function App() {
   return (
     <main>
       <section className="hero" aria-labelledby="main-heading">
-        <div className="reunion-badge">High School Classmates Get-Together</div>
+        <div className="reunion-badge">Nehru Children Model School — Batch of 2004–2005</div>
         <h1 id="main-heading">We&apos;re Meeting Again</h1>
         <p className="supporting-message">
           Old friends, unforgettable memories, and one special reunion. The countdown has officially begun.

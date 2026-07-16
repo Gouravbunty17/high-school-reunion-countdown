@@ -27,6 +27,7 @@ export type SupabaseInsertResponse = {
 const SUPABASE_URL = import.meta.env.VITE_SUPABASE_URL?.replace(/\/$/, "");
 const SUPABASE_ANON_KEY = import.meta.env.VITE_SUPABASE_ANON_KEY;
 const ATTENDEES_TABLE = import.meta.env.VITE_SUPABASE_ATTENDEES_TABLE || "reunion_attendees";
+const LOCAL_ATTENDEES_KEY = "nehru-reunion-local-attendees";
 
 export function sanitizeName(value: string): string {
   return value
@@ -51,6 +52,28 @@ export function getSupabaseConfigStatus(): { isConfigured: boolean; message?: st
   return { isConfigured: true };
 }
 
+function readLocalAttendees(): Attendee[] {
+  try {
+    const savedAttendees = window.localStorage.getItem(LOCAL_ATTENDEES_KEY);
+    return savedAttendees ? (JSON.parse(savedAttendees) as Attendee[]) : [];
+  } catch {
+    return [];
+  }
+}
+
+function writeLocalAttendees(attendees: Attendee[]): void {
+  window.localStorage.setItem(LOCAL_ATTENDEES_KEY, JSON.stringify(attendees));
+}
+
+function createLocalAttendee(name: string, normalizedName: string): Attendee {
+  return {
+    id: window.crypto.randomUUID(),
+    name,
+    normalized_name: normalizedName,
+    created_at: new Date().toISOString(),
+  };
+}
+
 function getHeaders(): HeadersInit {
   return {
     apikey: SUPABASE_ANON_KEY,
@@ -67,7 +90,7 @@ function getTableUrl(query = ""): string {
 export async function fetchAttendees(): Promise<Attendee[]> {
   const config = getSupabaseConfigStatus();
   if (!config.isConfigured) {
-    throw new Error(config.message);
+    return readLocalAttendees();
   }
 
   const response = await fetch(getTableUrl("?select=id,name,normalized_name,created_at&order=created_at.asc"), {
@@ -92,7 +115,17 @@ export async function addAttendee(rawName: string): Promise<AttendeeResult> {
 
   const config = getSupabaseConfigStatus();
   if (!config.isConfigured) {
-    return { ok: false, message: config.message ?? "RSVP storage is not configured yet." };
+    const existingAttendees = readLocalAttendees();
+    const isDuplicate = existingAttendees.some((attendee) => attendee.normalized_name === normalizedName);
+
+    if (isDuplicate) {
+      return { ok: false, message: `${name} is already on the list.` };
+    }
+
+    const attendee = createLocalAttendee(name, normalizedName);
+    writeLocalAttendees([...existingAttendees, attendee]);
+
+    return { ok: true, attendee };
   }
 
   const response = await fetch(getTableUrl(), {
