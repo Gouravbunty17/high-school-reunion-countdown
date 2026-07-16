@@ -1,14 +1,15 @@
 # Nehru Children Model School — Batch of 2004–2005 Countdown
 
-A warm, mobile-friendly countdown and shared RSVP website for **Nehru Children Model School — Batch of 2004–2005** on December 26-27, 2026. The countdown targets December 26, 2026 at 6:00 PM in the America/Toronto time zone.
+A warm, mobile-friendly countdown and shared RSVP website for **Nehru Children Model School — Batch of 2004–2005** on Saturday-Sunday, December 26-27, 2026. The countdown targets Saturday, December 26, 2026 at 6:00 PM in the America/Toronto time zone.
 
 ## Features
 
 - Live days, hours, minutes, and seconds countdown
 - Completion message when the reunion starts
 - Shared RSVP list backed by Supabase
+- Shared date voting backed by Supabase
 - Blank-name and duplicate-name prevention
-- Saved attendee list across refreshes and visitors
+- Saved attendee list and date votes across refreshes and visitors
 - Loading, success, and friendly error states
 - Mobile-first responsive layout with accessible labels and keyboard support
 - Metadata, favicon, and social-sharing image
@@ -30,6 +31,7 @@ Copy `.env.example` to `.env.local` for local development and configure the same
 VITE_SUPABASE_URL=https://your-project-ref.supabase.co
 VITE_SUPABASE_ANON_KEY=your-public-anon-key
 VITE_SUPABASE_ATTENDEES_TABLE=reunion_attendees
+VITE_SUPABASE_DATE_VOTES_TABLE=reunion_date_votes
 ```
 
 The anon key is safe to expose when Row Level Security is enabled with the policies in `supabase/schema.sql`. Do not commit service-role keys or private tokens.
@@ -41,7 +43,7 @@ The anon key is safe to expose when Row Level Security is enabled with the polic
 3. Run the SQL in `supabase/schema.sql`.
 4. Copy the project URL and public anon key into your Vercel environment variables.
 
-The table uses `normalized_name` as a unique column, so names like `Jane Smith` and ` jane   smith ` cannot be submitted twice.
+The attendee and date-vote tables use `normalized_name` as a unique column, so names like `Jane Smith` and ` jane   smith ` cannot be submitted twice.
 
 ## Test And Build
 

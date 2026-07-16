@@ -1,4 +1,5 @@
 import { Countdown } from "./components/Countdown";
+import { DateVote } from "./components/DateVote";
 import { Rsvp } from "./components/Rsvp";
 
 function App() {
@@ -14,8 +15,8 @@ function App() {
         <Countdown />
 
         <div className="event-details" aria-label="Event details">
-          <span>December 26-27, 2026</span>
-          <span>Countdown to Dec 26 at 6:00 PM Toronto time</span>
+          <span>Saturday-Sunday, December 26-27, 2026</span>
+          <span>Countdown to Saturday, Dec 26, 2026 at 6:00 PM Toronto time</span>
         </div>
       </section>
 
@@ -24,6 +25,7 @@ function App() {
       </section>
 
       <Rsvp />
+      <DateVote />
     </main>
   );
 }

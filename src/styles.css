@@ -173,7 +173,8 @@ h1 {
 }
 
 .memory-band,
-.rsvp-panel {
+.rsvp-panel,
+.vote-panel {
   border: 1px solid rgba(255, 255, 255, 0.15);
   background: rgba(255, 255, 255, 0.08);
   box-shadow: 0 20px 70px rgba(0, 0, 0, 0.24);
@@ -205,6 +206,15 @@ h1 {
   border-radius: 22px;
 }
 
+.vote-panel {
+  display: grid;
+  grid-template-columns: minmax(0, 0.85fr) minmax(0, 1.15fr);
+  gap: 28px;
+  margin-top: 22px;
+  padding: clamp(22px, 5vw, 40px);
+  border-radius: 22px;
+}
+
 .section-heading {
   display: grid;
   align-content: start;
@@ -229,9 +239,91 @@ h1 {
   gap: 10px;
 }
 
-.rsvp-form label {
+.rsvp-form label,
+.vote-form label,
+.vote-form legend {
   color: #fff1c9;
   font-weight: 800;
+}
+
+.vote-form {
+  grid-column: 2;
+  display: grid;
+  align-content: start;
+  gap: 14px;
+}
+
+.vote-form input[type="text"],
+.vote-form > input {
+  min-height: 52px;
+  width: 100%;
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  border-radius: 14px;
+  padding: 0 16px;
+  color: #fff9ed;
+  background: rgba(6, 16, 34, 0.78);
+  outline: none;
+}
+
+.vote-form > input:focus {
+  border-color: #ffd978;
+  box-shadow: 0 0 0 4px rgba(255, 217, 120, 0.16);
+}
+
+.vote-form fieldset {
+  display: grid;
+  gap: 10px;
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+.vote-options {
+  display: grid;
+  gap: 10px;
+}
+
+.vote-option {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 12px;
+  align-items: center;
+  padding: 13px;
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  border-radius: 14px;
+  background: rgba(5, 15, 32, 0.44);
+  cursor: pointer;
+}
+
+.vote-option input {
+  width: 18px;
+  height: 18px;
+  accent-color: #ffd978;
+}
+
+.vote-option span {
+  display: grid;
+  gap: 2px;
+}
+
+.vote-option strong {
+  color: #fff6df;
+}
+
+.vote-option small {
+  color: #d7c7a8;
+}
+
+.vote-form button {
+  min-height: 52px;
+  border: 0;
+  border-radius: 14px;
+  padding: 0 20px;
+  color: #08172f;
+  background: linear-gradient(135deg, #ffd978, #f0ad4e);
+  font-weight: 900;
+  cursor: pointer;
+  box-shadow: 0 14px 34px rgba(245, 199, 102, 0.2);
 }
 
 .input-row {
@@ -286,7 +378,8 @@ h1 {
 
 .notice,
 .attendee-summary,
-.attendee-list {
+.attendee-list,
+.vote-results {
   grid-column: 2;
 }
 
@@ -347,6 +440,35 @@ h1 {
   font-weight: 800;
 }
 
+.vote-results {
+  display: grid;
+  gap: 10px;
+  padding: 18px;
+  border-radius: 16px;
+  background: rgba(5, 15, 32, 0.54);
+}
+
+.vote-result {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 12px 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  color: #fff4d8;
+  font-weight: 800;
+}
+
+.vote-result:last-child {
+  border-bottom: 0;
+}
+
+.vote-result strong {
+  color: #ffd978;
+  font-size: 1.8rem;
+  line-height: 1;
+}
+
 .muted {
   color: #d7c7a8;
 }
@@ -393,14 +515,17 @@ h1 {
     align-items: center;
   }
 
-  .rsvp-panel {
+  .rsvp-panel,
+  .vote-panel {
     grid-template-columns: 1fr;
   }
 
   .rsvp-form,
+  .vote-form,
   .notice,
   .attendee-summary,
-  .attendee-list {
+  .attendee-list,
+  .vote-results {
     grid-column: 1;
   }
 
