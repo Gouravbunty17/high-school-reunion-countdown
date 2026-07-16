@@ -4,8 +4,8 @@ import { formatCountdownValue, getCountdownParts } from "./countdown";
 describe("countdown", () => {
   it("calculates days, hours, minutes, and seconds before the reunion", () => {
     const result = getCountdownParts(
-      new Date("2026-12-25T18:30:15-05:00"),
-      new Date("2026-12-26T18:00:00-05:00"),
+      new Date("2026-12-25T12:30:15+05:30"),
+      new Date("2026-12-26T12:00:00+05:30"),
     );
 
     expect(result).toEqual({
@@ -19,8 +19,8 @@ describe("countdown", () => {
 
   it("marks the countdown complete after the target date", () => {
     const result = getCountdownParts(
-      new Date("2026-12-26T18:00:01-05:00"),
-      new Date("2026-12-26T18:00:00-05:00"),
+      new Date("2026-12-26T12:00:01+05:30"),
+      new Date("2026-12-26T12:00:00+05:30"),
     );
 
     expect(result).toEqual({

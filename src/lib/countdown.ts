@@ -11,7 +11,7 @@ const MINUTE = 60 * SECOND;
 const HOUR = 60 * MINUTE;
 const DAY = 24 * HOUR;
 
-export const REUNION_TARGET_ISO = "2026-12-26T18:00:00-05:00";
+export const REUNION_TARGET_ISO = "2026-12-26T12:00:00+05:30";
 
 export function getCountdownParts(now: Date, target: Date): CountdownParts {
   const remaining = Math.max(target.getTime() - now.getTime(), 0);

@@ -16,7 +16,7 @@ function App() {
 
         <div className="event-details" aria-label="Event details">
           <span>One-day reunion: Saturday or Sunday, December 26 or 27, 2026</span>
-          <span>Countdown currently set to Saturday, Dec 26, 2026 at 6:00 PM Toronto time</span>
+          <span>Countdown currently set to Saturday, Dec 26, 2026 at 12:00 PM India time</span>
         </div>
       </section>
 
