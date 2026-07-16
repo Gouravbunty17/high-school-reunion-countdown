@@ -1,6 +1,6 @@
 # Nehru Children Model School — Batch of 2004–2005 Countdown
 
-A warm, mobile-friendly countdown and shared RSVP website for **Nehru Children Model School — Batch of 2004–2005** on Saturday-Sunday, December 26-27, 2026. The countdown targets Saturday, December 26, 2026 at 6:00 PM in the America/Toronto time zone.
+A warm, mobile-friendly countdown and shared RSVP website for the one-day **Nehru Children Model School — Batch of 2004–2005** reunion. Classmates can vote between Saturday, December 26, 2026 and Sunday, December 27, 2026. The countdown currently targets Saturday, December 26, 2026 at 6:00 PM in the America/Toronto time zone.
 
 ## Features
 

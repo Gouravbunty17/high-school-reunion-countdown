@@ -32,7 +32,7 @@ create table if not exists public.reunion_date_votes (
   id uuid primary key default gen_random_uuid(),
   name text not null check (char_length(trim(name)) between 1 and 80),
   normalized_name text not null unique check (char_length(trim(normalized_name)) between 1 and 80),
-  date_option text not null check (date_option in ('dec-26', 'dec-27', 'both-days')),
+  date_option text not null check (date_option in ('dec-26', 'dec-27')),
   created_at timestamptz not null default now()
 );
 
@@ -55,5 +55,5 @@ with check (
   and normalized_name = lower(normalized_name)
   and char_length(name) between 1 and 80
   and char_length(normalized_name) between 1 and 80
-  and date_option in ('dec-26', 'dec-27', 'both-days')
+  and date_option in ('dec-26', 'dec-27')
 );

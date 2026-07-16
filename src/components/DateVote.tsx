@@ -16,7 +16,7 @@ type VoteNotice = {
 export function DateVote() {
   const [votes, setVotes] = useState<DateVoteRecord[]>([]);
   const [name, setName] = useState("");
-  const [dateOption, setDateOption] = useState<DateOptionId>("both-days");
+  const [dateOption, setDateOption] = useState<DateOptionId>("dec-26");
   const [notice, setNotice] = useState<VoteNotice | null>(null);
   const [isLoading, setIsLoading] = useState(true);
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -77,7 +77,7 @@ export function DateVote() {
       <div className="section-heading">
         <p className="eyebrow">Date Vote</p>
         <h2 id="date-vote-heading">Which Date Works Best?</h2>
-        <p>Help us understand whether classmates prefer the first day, second day, or the whole reunion.</p>
+        <p>Help us choose the one reunion day that works better for most classmates.</p>
       </div>
 
       <form className="vote-form" onSubmit={handleSubmit}>

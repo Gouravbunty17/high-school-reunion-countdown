@@ -2,8 +2,7 @@ import { normalizeName, sanitizeName, SupabaseError } from "./attendees";
 
 export const DATE_OPTIONS = [
   { id: "dec-26", label: "Saturday, December 26, 2026", detail: "Opening evening" },
-  { id: "dec-27", label: "Sunday, December 27, 2026", detail: "Second day" },
-  { id: "both-days", label: "Both Saturday and Sunday", detail: "December 26-27, 2026" },
+  { id: "dec-27", label: "Sunday, December 27, 2026", detail: "Weekend daytime" },
 ] as const;
 
 export type DateOptionId = (typeof DATE_OPTIONS)[number]["id"];
