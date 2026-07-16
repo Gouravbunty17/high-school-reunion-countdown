@@ -17,7 +17,7 @@
 <div class="details"><span class="pill">December 26 or 27, 2026</span><span class="pill">Final date by class vote</span></div>
 </section>
 
-<section class="card grid"><div><div class="eyebrow">RSVP</div><h2>Who's Joining Us?</h2><p class="muted">Add your name if you are willing to be part of the reunion. Everyone opening this page will see the same list when Supabase is available.</p><div class="actions"><a class="linkbtn" href="#" id="whatsapp">Open WhatsApp Group</a></div></div><div>
+<section class="card grid"><div><div class="eyebrow">RSVP</div><h2>Who's Joining Us?</h2><p class="muted">Add your name if you are willing to be part of the reunion. Everyone opening this page will see the same list when Supabase is available.</p><div class="actions"><a class="linkbtn" href="https://chat.whatsapp.com/JFjeldlop2XEuXBUl6OO6R?s=qt&p=a&ilr=4&amv=3" id="whatsapp" target="_blank" rel="noopener noreferrer">Open WhatsApp Group</a></div></div><div>
 <form id="rsvpForm"><label for="name"><strong>Your full name</strong></label><div class="formrow" style="margin-top:8px"><input id="name" maxlength="80" autocomplete="name" placeholder="Enter your name" required><button id="rsvpBtn">I'm Coming</button></div></form><div id="rsvpNotice" class="notice" role="status"></div>
 <p><span class="count" id="attendeeCount">0</span> confirmed classmates</p><ul class="names" id="attendeeList"><li>Loading attendee list…</li></ul><div class="status" id="storageStatus"></div>
 </div></section>
@@ -28,7 +28,7 @@
 <p class="footer">See you all again ❤️</p>
 </main>
 <script>
-const CONFIG={target:'2026-12-26T12:00:00+05:30',supabaseUrl:'https://pacmnqhmfhmsvlvpcynq.supabase.co',supabaseKey:'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYXNlIiwicmVmIjoicGFjbW5xaG1maG1zdmx2cGN5bnEiLCJyb2xlIjoiYW5vbiIsImlhdCI6MTc4NDE3MzU5MCwiZXhwIjoyMDk5NzQ5NTkwfQ.hG-cogw6QVB00uPBEBOFYX9nWuzfhsmOeEFBMarEUOk',attendees:'reunion_attendees',votes:'reunion_date_votes',whatsapp:'#'};
+const CONFIG={target:'2026-12-26T12:00:00+05:30',supabaseUrl:'https://pacmnqhmfhmsvlvpcynq.supabase.co',supabaseKey:'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYXNlIiwicmVmIjoicGFjbW5xaG1maG1zdmx2cGN5bnEiLCJyb2xlIjoiYW5vbiIsImlhdCI6MTc4NDE3MzU5MCwiZXhwIjoyMDk5NzQ5NTkwfQ.hG-cogw6QVB00uPBEBOFYX9nWuzfhsmOeEFBMarEUOk',attendees:'reunion_attendees',votes:'reunion_date_votes',whatsapp:'https://chat.whatsapp.com/JFjeldlop2XEuXBUl6OO6R?s=qt&p=a&ilr=4&amv=3'};
 const $=id=>document.getElementById(id);let attendees=[],votes=[],remote=true;
 function tick(){let d=Math.max(new Date(CONFIG.target)-new Date(),0),u=[864e5,36e5,6e4,1e3],ids=['days','hours','minutes','seconds'];u.forEach((x,i)=>{let v=i?Math.floor(d%x/u[i]):Math.floor(d/x);$(ids[i]).textContent=String(v).padStart(2,'0')})}tick();setInterval(tick,1000);
 function clean(v){return String(v||'').replace(/<[^>]*>/g,' ').replace(/\s+/g,' ').trim().slice(0,80)}function norm(v){return clean(v).toLowerCase()}function valid(v){return /^[A-Za-z\u00C0-\u024F][A-Za-z\u00C0-\u024F .'-]*$/.test(v)}
