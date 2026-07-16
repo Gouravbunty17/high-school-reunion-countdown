@@ -1,26 +1,44 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Nehru Children Model School — Batch of 2004–2005 Countdown</title>
-    <meta
-      name="description"
-      content="Countdown, RSVP, and date vote page for the one-day Nehru Children Model School — Batch of 2004–2005 reunion in December 2026."
-    />
-    <meta property="og:title" content="We're Meeting Again" />
-    <meta
-      property="og:description"
-      content="Old friends, unforgettable memories, and one special reunion. The countdown has officially begun."
-    />
-    <meta property="og:type" content="website" />
-    <meta property="og:image" content="/social-card.svg" />
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="theme-color" content="#08172f" />
-    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
-  </head>
-  <body>
-    <div id="root"></div>
-    <script type="module" src="/src/main.tsx"></script>
-  </body>
-</html>
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Nehru Children Model School Reunion 2026</title>
+<meta name="description" content="Batch of 2004–2005 reunion countdown, RSVP and date voting.">
+<style>
+:root{--ink:#3b2b25;--muted:#725e54;--paper:#fffaf0;--accent:#b95732;--gold:#d99d45;--line:#dfcdbf;--ok:#23633c;--bad:#9f2d20}*{box-sizing:border-box}body{margin:0;font-family:Inter,system-ui,sans-serif;color:var(--ink);background:radial-gradient(circle at 10% 0,#f4cba7aa,transparent 36rem),radial-gradient(circle at 90% 12%,#bce0dc88,transparent 30rem),linear-gradient(155deg,#fffaf1,#f3e6d8);min-height:100vh}main{width:min(1080px,calc(100% - 28px));margin:auto;padding:28px 0 54px}.hero{text-align:center;min-height:68vh;display:grid;place-content:center;gap:20px}.badge,.pill{display:inline-flex;justify-self:center;padding:9px 13px;border:1px solid #c9886c;border-radius:999px;background:#fff9;color:#9e4327;font-size:.78rem;font-weight:800;text-transform:uppercase;letter-spacing:.06em}h1{font-size:clamp(3rem,10vw,7rem);line-height:.94;margin:0;letter-spacing:-.055em}.lead{max-width:680px;margin:auto;font-size:clamp(1.05rem,2.5vw,1.35rem);line-height:1.65;color:var(--muted)}.countdown{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;width:min(760px,100%);margin:auto}.time{padding:22px 10px;border:1px solid #d7c4b5;border-radius:18px;background:#ffffffa8;box-shadow:0 16px 40px #67432b1a}.num{display:block;font-size:clamp(2.2rem,7vw,4rem);font-weight:900;color:var(--accent);font-variant-numeric:tabular-nums}.lab{font-size:.78rem;text-transform:uppercase;font-weight:800;color:var(--muted)}.details{display:flex;flex-wrap:wrap;justify-content:center;gap:10px}.card{margin-top:24px;padding:clamp(22px,5vw,40px);border:1px solid var(--line);border-radius:24px;background:#ffffffa6;box-shadow:0 22px 70px #67432b14;backdrop-filter:blur(14px)}.grid{display:grid;grid-template-columns:.8fr 1.2fr;gap:30px}h2{font-size:clamp(2rem,5vw,3.6rem);line-height:1;margin:6px 0 12px}.eyebrow{font-size:.78rem;font-weight:900;color:var(--accent);letter-spacing:.08em;text-transform:uppercase}.muted{color:var(--muted);line-height:1.6}.formrow{display:grid;grid-template-columns:1fr auto;gap:10px}input,select{width:100%;min-height:52px;border:1px solid #cdb8a8;border-radius:14px;padding:0 15px;background:#fff;color:var(--ink);font-size:1rem}button{min-height:52px;border:0;border-radius:14px;padding:0 20px;background:linear-gradient(135deg,var(--accent),var(--gold));color:white;font-weight:900;cursor:pointer}button:disabled{opacity:.55;cursor:not-allowed}.notice{display:none;margin:12px 0 0;padding:12px;border-radius:12px;font-weight:700}.notice.ok{display:block;color:var(--ok);background:#dff3e6}.notice.bad{display:block;color:var(--bad);background:#f7dfdb}.count{font-size:3rem;font-weight:900;color:var(--accent)}.names{display:flex;flex-wrap:wrap;gap:9px;padding:0;list-style:none}.names li{padding:9px 12px;border:1px solid #d7b49f;border-radius:999px;background:#fff9;font-weight:800}.results{display:grid;gap:12px}.result{padding:14px;border:1px solid var(--line);border-radius:14px;background:#fff8}.bar{height:9px;border-radius:99px;background:#eadbd0;overflow:hidden;margin-top:8px}.bar span{display:block;height:100%;background:linear-gradient(90deg,var(--accent),var(--gold))}.actions{display:flex;gap:10px;flex-wrap:wrap}.linkbtn{display:inline-flex;align-items:center;text-decoration:none;min-height:48px;padding:0 17px;border-radius:14px;font-weight:900;background:#2e8b57;color:#fff}.status{font-size:.9rem;color:var(--muted);margin-top:8px}.footer{text-align:center;color:var(--muted);padding-top:28px}@media(max-width:760px){.countdown{grid-template-columns:repeat(2,1fr)}.grid{grid-template-columns:1fr}.formrow{grid-template-columns:1fr}.hero{min-height:auto;padding:50px 0 20px}}
+</style>
+</head>
+<body><main>
+<section class="hero">
+<div class="badge">Nehru Children Model School — Batch of 2004–2005</div>
+<h1>We're Meeting Again</h1>
+<p class="lead">Old friends, unforgettable memories, and one special reunion. No matter how far life has taken us, some friendships always bring us back home.</p>
+<div class="countdown" aria-label="Countdown"><div class="time"><span class="num" id="days">00</span><span class="lab">Days</span></div><div class="time"><span class="num" id="hours">00</span><span class="lab">Hours</span></div><div class="time"><span class="num" id="minutes">00</span><span class="lab">Minutes</span></div><div class="time"><span class="num" id="seconds">00</span><span class="lab">Seconds</span></div></div>
+<div class="details"><span class="pill">December 26 or 27, 2026</span><span class="pill">Final date by class vote</span></div>
+</section>
+
+<section class="card grid"><div><div class="eyebrow">RSVP</div><h2>Who's Joining Us?</h2><p class="muted">Add your name if you are willing to be part of the reunion. Everyone opening this page will see the same list when Supabase is available.</p><div class="actions"><a class="linkbtn" href="#" id="whatsapp">Open WhatsApp Group</a></div></div><div>
+<form id="rsvpForm"><label for="name"><strong>Your full name</strong></label><div class="formrow" style="margin-top:8px"><input id="name" maxlength="80" autocomplete="name" placeholder="Enter your name" required><button id="rsvpBtn">I'm Coming</button></div></form><div id="rsvpNotice" class="notice" role="status"></div>
+<p><span class="count" id="attendeeCount">0</span> confirmed classmates</p><ul class="names" id="attendeeList"><li>Loading attendee list…</li></ul><div class="status" id="storageStatus"></div>
+</div></section>
+
+<section class="card grid"><div><div class="eyebrow">Choose the day</div><h2>Vote for the reunion date</h2><p class="muted">Please vote only once. The most suitable day can be finalized after everyone has had a chance to respond.</p></div><div>
+<form id="voteForm"><label for="voteName"><strong>Your name</strong></label><input id="voteName" maxlength="80" autocomplete="name" placeholder="Enter your name" required style="margin:8px 0 10px"><label for="dateOption"><strong>Preferred date</strong></label><div class="formrow" style="margin-top:8px"><select id="dateOption"><option value="dec-26">Saturday, December 26, 2026</option><option value="dec-27">Sunday, December 27, 2026</option></select><button id="voteBtn">Submit Vote</button></div></form><div id="voteNotice" class="notice" role="status"></div><div class="results" id="results" style="margin-top:18px"></div>
+</div></section>
+<p class="footer">See you all again ❤️</p>
+</main>
+<script>
+const CONFIG={target:'2026-12-26T12:00:00+05:30',supabaseUrl:'https://pacmnqhmfhmsvlvpcynq.supabase.co',supabaseKey:'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYXNlIiwicmVmIjoicGFjbW5xaG1maG1zdmx2cGN5bnEiLCJyb2xlIjoiYW5vbiIsImlhdCI6MTc4NDE3MzU5MCwiZXhwIjoyMDk5NzQ5NTkwfQ.hG-cogw6QVB00uPBEBOFYX9nWuzfhsmOeEFBMarEUOk',attendees:'reunion_attendees',votes:'reunion_date_votes',whatsapp:'#'};
+const $=id=>document.getElementById(id);let attendees=[],votes=[],remote=true;
+function tick(){let d=Math.max(new Date(CONFIG.target)-new Date(),0),u=[864e5,36e5,6e4,1e3],ids=['days','hours','minutes','seconds'];u.forEach((x,i)=>{let v=i?Math.floor(d%x/u[i]):Math.floor(d/x);$(ids[i]).textContent=String(v).padStart(2,'0')})}tick();setInterval(tick,1000);
+function clean(v){return String(v||'').replace(/<[^>]*>/g,' ').replace(/\s+/g,' ').trim().slice(0,80)}function norm(v){return clean(v).toLowerCase()}function valid(v){return /^[A-Za-z\u00C0-\u024F][A-Za-z\u00C0-\u024F .'-]*$/.test(v)}
+function headers(){return{apikey:CONFIG.supabaseKey,Authorization:'Bearer '+CONFIG.supabaseKey,'Content-Type':'application/json',Prefer:'return=representation'}}function url(t,q=''){return CONFIG.supabaseUrl+'/rest/v1/'+t+q}
+async function fetchRows(t,fields){let r=await fetch(url(t,`?select=${fields}&order=created_at.asc`),{headers:headers()});if(!r.ok)throw Error(await r.text());return r.json()}async function insert(t,row){let r=await fetch(url(t),{method:'POST',headers:headers(),body:JSON.stringify(row)}),p=await r.json().catch(()=>null);if(!r.ok)throw Object.assign(Error('Save failed'),{duplicate:p&&p.code==='23505'});return Array.isArray(p)?p[0]:p}
+function local(k){try{return JSON.parse(localStorage.getItem(k)||'[]')}catch{return[]}}function save(k,v){localStorage.setItem(k,JSON.stringify(v))}
+function render(){ $('attendeeCount').textContent=attendees.length;$('attendeeList').innerHTML=attendees.length?attendees.map(a=>`<li>${a.name.replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]))}</li>`).join(''):'<li>No classmates have RSVP’d yet. You can be first.</li>';let c26=votes.filter(v=>v.date_option==='dec-26').length,c27=votes.filter(v=>v.date_option==='dec-27').length,total=Math.max(c26+c27,1);$('results').innerHTML=`<div class="result"><strong>Saturday, December 26</strong> — ${c26} vote${c26===1?'':'s'}<div class="bar"><span style="width:${c26/total*100}%"></span></div></div><div class="result"><strong>Sunday, December 27</strong> — ${c27} vote${c27===1?'':'s'}<div class="bar"><span style="width:${c27/total*100}%"></span></div></div>`;$('storageStatus').textContent=remote?'Shared attendee list is connected.':'Supabase could not be reached. This browser is temporarily using local storage.'}
+function notice(id,msg,type){let e=$(id);e.textContent=msg;e.className='notice '+type}
+async function load(){try{[attendees,votes]=await Promise.all([fetchRows(CONFIG.attendees,'id,name,normalized_name,created_at'),fetchRows(CONFIG.votes,'id,name,normalized_name,date_option,created_at')]);remote=true}catch(e){remote=false;attendees=local('reunion_attendees');votes=local('reunion_votes')}render()}
+$('rsvpForm').addEventListener('submit',async e=>{e.preventDefault();let name=clean($('name').value),n=norm(name);if(!valid(name))return notice('rsvpNotice','Please enter a valid name using letters only.','bad');if(attendees.some(a=>a.normalized_name===n))return notice('rsvpNotice',name+' is already on the list.','bad');$('rsvpBtn').disabled=true;try{let row=remote?await insert(CONFIG.attendees,{name,normalized_name:n}):{id:crypto.randomUUID?.()||Date.now(),name,normalized_name:n,created_at:new Date().toISOString()};attendees.push(row);if(!remote)save('reunion_attendees',attendees);$('name').value='';notice('rsvpNotice',name+' is confirmed. We cannot wait to see you!','ok');render()}catch(err){notice('rsvpNotice',err.duplicate?name+' is already on the list.':'Could not save your RSVP. Check the Supabase table and RLS policies.','bad')}finally{$('rsvpBtn').disabled=false}});
+$('voteForm').addEventListener('submit',async e=>{e.preventDefault();let name=clean($('voteName').value),n=norm(name),date_option=$('dateOption').value;if(!valid(name))return notice('voteNotice','Please enter a valid name using letters only.','bad');if(votes.some(v=>v.normalized_name===n))return notice('voteNotice',name+' has already voted.','bad');$('voteBtn').disabled=true;try{let row=remote?await insert(CONFIG.votes,{name,normalized_name:n,date_option}):{id:crypto.randomUUID?.()||Date.now(),name,normalized_name:n,date_option,created_at:new Date().toISOString()};votes.push(row);if(!remote)save('reunion_votes',votes);$('voteName').value='';notice('voteNotice','Thanks, '+name+'. Your vote has been counted.','ok');render()}catch(err){notice('voteNotice',err.duplicate?name+' has already voted.':'Could not save your vote. Check the Supabase table and RLS policies.','bad')}finally{$('voteBtn').disabled=false}});
+$('whatsapp').addEventListener('click',e=>{if(CONFIG.whatsapp==='#'){e.preventDefault();alert('Add your WhatsApp group invite URL in CONFIG.whatsapp before publishing.')}});load();
+</script></body></html>
