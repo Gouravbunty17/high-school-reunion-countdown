@@ -31,7 +31,9 @@ const LOCAL_ATTENDEES_KEY = "nehru-reunion-local-attendees";
 
 export function sanitizeName(value: string): string {
   return value
-    .replace(/[<>]/g, "")
+    .replace(/<script\b[^<]*(?:(?!<\/script>)<[^<]*)*<\/script>/gi, " ")
+    .replace(/<style\b[^<]*(?:(?!<\/style>)<[^<]*)*<\/style>/gi, " ")
+    .replace(/<[^>]*>/g, " ")
     .replace(/\s+/g, " ")
     .trim()
     .slice(0, 80);

@@ -4,7 +4,9 @@ import { normalizeName, sanitizeName } from "./attendees";
 describe("attendee helpers", () => {
   it("sanitizes blank names and strips angle brackets", () => {
     expect(sanitizeName("   ")).toBe("");
-    expect(sanitizeName(" <Ada   Lovelace> ")).toBe("Ada Lovelace");
+    expect(sanitizeName(" <Ada   Lovelace> ")).toBe("");
+    expect(sanitizeName(" <img src=x onerror=alert(1)> Ada   Lovelace ")).toBe("Ada Lovelace");
+    expect(sanitizeName(" <script>alert(1)</script> Grace Hopper ")).toBe("Grace Hopper");
   });
 
   it("normalizes names for duplicate detection", () => {
