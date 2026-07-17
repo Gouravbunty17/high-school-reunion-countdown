@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import { normalizeName, sanitizeName } from "./attendees";
+import { isValidName, normalizeName, sanitizeName } from "./attendees";
 
 describe("attendee helpers", () => {
   it("sanitizes blank names and strips angle brackets", () => {
@@ -15,5 +15,12 @@ describe("attendee helpers", () => {
 
   it("limits names to a reasonable length", () => {
     expect(sanitizeName("a".repeat(120))).toHaveLength(80);
+  });
+
+  it("rejects numbers and special characters in names", () => {
+    expect(isValidName("Gourav Kumar")).toBe(true);
+    expect(isValidName("Gourav123")).toBe(false);
+    expect(isValidName("Gourav @ Kumar")).toBe(false);
+    expect(isValidName("Amit #1")).toBe(false);
   });
 });

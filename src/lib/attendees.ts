@@ -43,6 +43,10 @@ export function normalizeName(value: string): string {
   return sanitizeName(value).toLocaleLowerCase("en-US");
 }
 
+export function isValidName(value: string): boolean {
+  return /^[A-Za-z\u00C0-\u024F][A-Za-z\u00C0-\u024F .'-]*$/.test(value);
+}
+
 export function getSupabaseConfigStatus(): { isConfigured: boolean; message?: string } {
   if (!SUPABASE_URL || !SUPABASE_ANON_KEY) {
     return {
@@ -113,6 +117,10 @@ export async function addAttendee(rawName: string): Promise<AttendeeResult> {
 
   if (!name) {
     return { ok: false, message: "Please enter your name before joining the list." };
+  }
+
+  if (!isValidName(name)) {
+    return { ok: false, message: "Please use letters only. Numbers and special characters are not allowed." };
   }
 
   const config = getSupabaseConfigStatus();

@@ -1,4 +1,4 @@
-import { normalizeName, sanitizeName, SupabaseError } from "./attendees";
+import { isValidName, normalizeName, sanitizeName, SupabaseError } from "./attendees";
 
 export const DATE_OPTIONS = [
   { id: "dec-26", label: "Saturday, December 26, 2026", detail: "Opening evening" },
@@ -111,6 +111,10 @@ export async function submitDateVote(rawName: string, dateOption: DateOptionId):
 
   if (!name) {
     return { ok: false, message: "Please enter your name before voting." };
+  }
+
+  if (!isValidName(name)) {
+    return { ok: false, message: "Please use letters only. Numbers and special characters are not allowed." };
   }
 
   if (!isDateOptionId(dateOption)) {
