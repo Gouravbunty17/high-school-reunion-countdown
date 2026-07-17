@@ -32,6 +32,7 @@ const SUPABASE_ANON_KEY =
   import.meta.env.VITE_SUPABASE_ANON_KEY || "sb_publishable_hS9HcfC5hlG43QVfdP0xlA_4tXeFRyF";
 const ATTENDEES_TABLE = import.meta.env.VITE_SUPABASE_ATTENDEES_TABLE || "reunion_attendees";
 const LOCAL_ATTENDEES_KEY = "nehru-reunion-local-attendees";
+const HIDDEN_ATTENDEE_NAMES = new Set(["codex probe"]);
 
 export function sanitizeName(value: string): string {
   return value
@@ -66,10 +67,14 @@ export function getReturnedAttendee(payload: SupabaseInsertResponse | Attendee[]
   return Array.isArray(payload) ? payload[0] : payload.data?.[0];
 }
 
+export function isVisibleAttendee(attendee: Attendee): boolean {
+  return !HIDDEN_ATTENDEE_NAMES.has(attendee.normalized_name);
+}
+
 function readLocalAttendees(): Attendee[] {
   try {
     const savedAttendees = window.localStorage.getItem(LOCAL_ATTENDEES_KEY);
-    return savedAttendees ? (JSON.parse(savedAttendees) as Attendee[]) : [];
+    return savedAttendees ? (JSON.parse(savedAttendees) as Attendee[]).filter(isVisibleAttendee) : [];
   } catch {
     return [];
   }
@@ -116,7 +121,8 @@ export async function fetchAttendees(): Promise<Attendee[]> {
     throw new Error("We could not load the attendee list. Please try again in a moment.");
   }
 
-  return Array.isArray(payload) ? payload : payload.data ?? [];
+  const attendees = Array.isArray(payload) ? payload : payload.data ?? [];
+  return attendees.filter(isVisibleAttendee);
 }
 
 export async function addAttendee(rawName: string): Promise<AttendeeResult> {

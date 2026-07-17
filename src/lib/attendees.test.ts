@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import { getReturnedAttendee, isValidName, normalizeName, sanitizeName } from "./attendees";
+import { getReturnedAttendee, isValidName, isVisibleAttendee, normalizeName, sanitizeName } from "./attendees";
 
 describe("attendee helpers", () => {
   it("sanitizes blank names and strips angle brackets", () => {
@@ -34,5 +34,16 @@ describe("attendee helpers", () => {
 
     expect(getReturnedAttendee([attendee])).toEqual(attendee);
     expect(getReturnedAttendee({ data: [attendee], error: null })).toEqual(attendee);
+  });
+
+  it("hides accidental system probe rows", () => {
+    expect(
+      isVisibleAttendee({
+        id: "probe",
+        name: "Codex Probe",
+        normalized_name: "codex probe",
+        created_at: "2026-01-01T00:00:00Z",
+      }),
+    ).toBe(false);
   });
 });
