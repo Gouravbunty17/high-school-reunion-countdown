@@ -25,7 +25,7 @@ Open the local URL printed by Vite.
 
 ## Environment Variables
 
-Copy `.env.example` to `.env.local` for local development and configure the same variables in Vercel.
+Copy `.env.example` to `.env.local` for local development and configure the same variables in Cloudflare Pages.
 
 ```bash
 VITE_SUPABASE_URL=https://your-project-ref.supabase.co
@@ -41,7 +41,7 @@ The anon key is safe to expose when Row Level Security is enabled with the polic
 1. Create a Supabase project.
 2. Open the Supabase SQL editor.
 3. Run the SQL in `supabase/schema.sql`.
-4. Copy the project URL and public anon key into your Vercel environment variables.
+4. Copy the project URL and public anon key into your Cloudflare Pages environment variables.
 
 The attendee and date-vote tables use `normalized_name` as a unique column, so names like `Jane Smith` and ` jane   smith ` cannot be submitted twice.
 
@@ -55,11 +55,11 @@ npm run build
 
 ## Deployment
 
-This app is configured for Vercel.
+This app is configured for Cloudflare Pages.
 
 1. Push the repository to GitHub.
-2. Import the GitHub repository in Vercel, or link it with the Vercel CLI.
-3. Add the Supabase environment variables in Vercel.
+2. Connect the GitHub repository in Cloudflare Pages.
+3. Add the Supabase environment variables in Cloudflare Pages for Production.
 4. Deploy to production.
 
 Future pushes to the connected GitHub repository will redeploy automatically.

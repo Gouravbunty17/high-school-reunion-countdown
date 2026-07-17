@@ -88,6 +88,10 @@ function createLocalVote(name: string, normalizedName: string, dateOption: DateO
   };
 }
 
+export function getReturnedDateVote(payload: DateVoteInsertResponse | DateVote[]): DateVote | undefined {
+  return Array.isArray(payload) ? payload[0] : payload.data?.[0];
+}
+
 export async function fetchDateVotes(): Promise<DateVote[]> {
   if (!isSupabaseConfigured()) {
     return readLocalVotes();
@@ -139,7 +143,7 @@ export async function submitDateVote(rawName: string, dateOption: DateOptionId):
     headers: getHeaders(),
     body: JSON.stringify({ name, normalized_name: normalizedName, date_option: dateOption }),
   });
-  const payload = (await response.json()) as DateVoteInsertResponse | SupabaseError;
+  const payload = (await response.json()) as DateVoteInsertResponse | SupabaseError | DateVote[];
 
   if (!response.ok) {
     if ("code" in payload && payload.code === "23505") {
@@ -149,9 +153,7 @@ export async function submitDateVote(rawName: string, dateOption: DateOptionId):
     return { ok: false, message: "We could not save your date vote just now. Please try again." };
   }
 
-  const vote = Array.isArray((payload as DateVoteInsertResponse).data)
-    ? (payload as DateVoteInsertResponse).data?.[0]
-    : undefined;
+  const vote = getReturnedDateVote(Array.isArray(payload) ? payload : (payload as DateVoteInsertResponse));
 
   if (!vote) {
     return { ok: false, message: "Your vote was received, but the results could not refresh." };

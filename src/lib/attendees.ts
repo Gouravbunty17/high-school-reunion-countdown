@@ -58,6 +58,10 @@ export function getSupabaseConfigStatus(): { isConfigured: boolean; message?: st
   return { isConfigured: true };
 }
 
+export function getReturnedAttendee(payload: SupabaseInsertResponse | Attendee[]): Attendee | undefined {
+  return Array.isArray(payload) ? payload[0] : payload.data?.[0];
+}
+
 function readLocalAttendees(): Attendee[] {
   try {
     const savedAttendees = window.localStorage.getItem(LOCAL_ATTENDEES_KEY);
@@ -143,7 +147,7 @@ export async function addAttendee(rawName: string): Promise<AttendeeResult> {
     headers: getHeaders(),
     body: JSON.stringify({ name, normalized_name: normalizedName }),
   });
-  const payload = (await response.json()) as SupabaseInsertResponse | SupabaseError;
+  const payload = (await response.json()) as SupabaseInsertResponse | SupabaseError | Attendee[];
 
   if (!response.ok) {
     if ("code" in payload && payload.code === "23505") {
@@ -156,9 +160,7 @@ export async function addAttendee(rawName: string): Promise<AttendeeResult> {
     };
   }
 
-  const attendee = Array.isArray((payload as SupabaseInsertResponse).data)
-    ? (payload as SupabaseInsertResponse).data?.[0]
-    : undefined;
+  const attendee = getReturnedAttendee(Array.isArray(payload) ? payload : (payload as SupabaseInsertResponse));
 
   if (!attendee) {
     return { ok: false, message: "Your RSVP was received, but the attendee list could not refresh." };

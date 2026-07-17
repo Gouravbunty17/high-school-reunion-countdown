@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import { isValidName, normalizeName, sanitizeName } from "./attendees";
+import { getReturnedAttendee, isValidName, normalizeName, sanitizeName } from "./attendees";
 
 describe("attendee helpers", () => {
   it("sanitizes blank names and strips angle brackets", () => {
@@ -22,5 +22,17 @@ describe("attendee helpers", () => {
     expect(isValidName("Gourav123")).toBe(false);
     expect(isValidName("Gourav @ Kumar")).toBe(false);
     expect(isValidName("Amit #1")).toBe(false);
+  });
+
+  it("reads inserted attendees from Supabase response formats", () => {
+    const attendee = {
+      id: "1",
+      name: "Gourav Kumar",
+      normalized_name: "gourav kumar",
+      created_at: "2026-01-01T00:00:00Z",
+    };
+
+    expect(getReturnedAttendee([attendee])).toEqual(attendee);
+    expect(getReturnedAttendee({ data: [attendee], error: null })).toEqual(attendee);
   });
 });

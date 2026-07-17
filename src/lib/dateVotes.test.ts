@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import { countVotes, DATE_OPTIONS, isDateOptionId } from "./dateVotes";
+import { countVotes, DATE_OPTIONS, getReturnedDateVote, isDateOptionId } from "./dateVotes";
 
 describe("date vote helpers", () => {
   it("validates known date option IDs", () => {
@@ -32,5 +32,18 @@ describe("date vote helpers", () => {
       "dec-27": 1,
     });
     expect(Object.keys(counts)).toHaveLength(DATE_OPTIONS.length);
+  });
+
+  it("reads inserted votes from Supabase response formats", () => {
+    const vote = {
+      id: "1",
+      name: "Gourav Kumar",
+      normalized_name: "gourav kumar",
+      date_option: "dec-26" as const,
+      created_at: "2026-01-01T00:00:00Z",
+    };
+
+    expect(getReturnedDateVote([vote])).toEqual(vote);
+    expect(getReturnedDateVote({ data: [vote], error: null })).toEqual(vote);
   });
 });
