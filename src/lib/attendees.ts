@@ -24,8 +24,12 @@ export type SupabaseInsertResponse = {
   error: SupabaseError | null;
 };
 
-const SUPABASE_URL = import.meta.env.VITE_SUPABASE_URL?.replace(/\/$/, "");
-const SUPABASE_ANON_KEY = import.meta.env.VITE_SUPABASE_ANON_KEY;
+const SUPABASE_URL = (import.meta.env.VITE_SUPABASE_URL || "https://pacmnqhmfhmsvlvpcynq.supabase.co").replace(
+  /\/$/,
+  "",
+);
+const SUPABASE_ANON_KEY =
+  import.meta.env.VITE_SUPABASE_ANON_KEY || "sb_publishable_hS9HcfC5hlG43QVfdP0xlA_4tXeFRyF";
 const ATTENDEES_TABLE = import.meta.env.VITE_SUPABASE_ATTENDEES_TABLE || "reunion_attendees";
 const LOCAL_ATTENDEES_KEY = "nehru-reunion-local-attendees";
 

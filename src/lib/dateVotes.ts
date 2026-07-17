@@ -29,8 +29,12 @@ type DateVoteInsertResponse = {
   error: SupabaseError | null;
 };
 
-const SUPABASE_URL = import.meta.env.VITE_SUPABASE_URL?.replace(/\/$/, "");
-const SUPABASE_ANON_KEY = import.meta.env.VITE_SUPABASE_ANON_KEY;
+const SUPABASE_URL = (import.meta.env.VITE_SUPABASE_URL || "https://pacmnqhmfhmsvlvpcynq.supabase.co").replace(
+  /\/$/,
+  "",
+);
+const SUPABASE_ANON_KEY =
+  import.meta.env.VITE_SUPABASE_ANON_KEY || "sb_publishable_hS9HcfC5hlG43QVfdP0xlA_4tXeFRyF";
 const DATE_VOTES_TABLE = import.meta.env.VITE_SUPABASE_DATE_VOTES_TABLE || "reunion_date_votes";
 const LOCAL_DATE_VOTES_KEY = "nehru-reunion-local-date-votes";
 
