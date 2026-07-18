@@ -9,7 +9,7 @@ function App() {
     <main className="reunion-site">
       <section className="hero" aria-labelledby="main-heading">
         <div className="hero-copy-block">
-          <p className="school-kicker">Nehru Children Model School - Batch of 2004-2005</p>
+          <p className="school-kicker">Nehru Children Model School - Batch of 2005-2006</p>
           <h1 id="main-heading">We&apos;re Meeting Again</h1>
           <p className="supporting-message">
             Old friends, unforgettable memories, and one special reunion. The countdown has officially begun.
@@ -33,7 +33,7 @@ function App() {
             <span>Old benches</span>
           </div>
           <div className="memory-photo photo-three">
-            <span>Batch of 2004-2005</span>
+            <span>Batch of 2005-2006</span>
           </div>
         </div>
       </section>
@@ -94,7 +94,7 @@ function App() {
         </div>
       </section>
 
-      <footer className="site-footer">Nehru Children Model School - Batch of 2004-2005 - See you again soon.</footer>
+      <footer className="site-footer">Nehru Children Model School - Batch of 2005-2006 - See you again soon.</footer>
     </main>
   );
 }
