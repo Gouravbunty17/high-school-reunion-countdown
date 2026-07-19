@@ -25,16 +25,28 @@ function App() {
           </div>
         </div>
 
-        <div className="memory-stack" aria-label="School memory notes">
-          <div className="memory-photo photo-one">
-            <span>Classroom laughs</span>
-          </div>
-          <div className="memory-photo photo-two">
-            <span>Old benches</span>
-          </div>
-          <div className="memory-photo photo-three">
-            <span>Batch of 2005-2006</span>
-          </div>
+        <div className="memory-stack" aria-label="School memory photos">
+          <figure className="memory-photo photo-one">
+            <img
+              src="/memories/classroom-laughter.jpg"
+              alt="Illustrated classmates smiling together inside a classroom"
+            />
+            <figcaption>Classroom Laughter</figcaption>
+          </figure>
+          <figure className="memory-photo photo-two">
+            <img
+              src="/memories/friends-forever.jpg"
+              alt="Illustrated classmates posing together outside Class VIII-B"
+            />
+            <figcaption>Friends Forever</figcaption>
+          </figure>
+          <figure className="memory-photo photo-three">
+            <img
+              src="/memories/schoolyard-memories.jpg"
+              alt="Illustrated classmates standing together in the schoolyard"
+            />
+            <figcaption>Schoolyard Memories</figcaption>
+          </figure>
         </div>
       </section>
 
