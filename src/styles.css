@@ -158,77 +158,58 @@ h1 {
 }
 
 .memory-stack {
-  min-height: 520px;
+  min-height: 500px;
   position: relative;
 }
 
 .memory-stack::before {
-  content: "NCMS";
-  position: absolute;
-  inset: 48px 40px 54px 26px;
-  display: grid;
-  place-items: center;
-  border: 1px solid rgba(247, 205, 115, 0.18);
-  color: rgba(255, 245, 223, 0.08);
-  font-family: Georgia, "Times New Roman", serif;
-  font-size: clamp(5rem, 12vw, 8.5rem);
-  font-weight: 900;
-  background:
-    linear-gradient(135deg, rgba(255, 255, 255, 0.08), rgba(255, 255, 255, 0.02)),
-    linear-gradient(180deg, rgba(11, 31, 65, 0.76), rgba(7, 12, 26, 0.82));
-  box-shadow: 0 30px 90px rgba(0, 0, 0, 0.3);
-  transform: rotate(-2deg);
+  display: none;
 }
 
 .memory-photo {
   position: absolute;
-  width: min(62%, 310px);
-  min-height: 210px;
+  width: min(66%, 350px);
   margin: 0;
   display: block;
   padding: 0;
-  border: 10px solid #fff4dd;
-  border-bottom-width: 46px;
   color: #281b15;
-  background: #fff4dd;
-  box-shadow: 0 28px 80px rgba(0, 0, 0, 0.32);
-  overflow: hidden;
+  background: transparent;
+  filter: drop-shadow(0 24px 44px rgba(0, 0, 0, 0.32));
 }
 
 .memory-photo img {
   width: 100%;
-  min-height: inherit;
+  height: auto;
   display: block;
-  object-fit: cover;
 }
 
 .memory-photo figcaption {
   position: absolute;
-  left: 14px;
-  right: 14px;
-  bottom: -34px;
-  color: #463426;
-  font-family: Georgia, "Times New Roman", serif;
-  font-size: 1.05rem;
-  font-weight: 800;
-  text-align: center;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
 }
 
 .photo-one {
-  top: 24px;
-  left: 0;
+  top: 16px;
+  left: 18px;
   transform: rotate(-7deg);
 }
 
 .photo-two {
-  top: 150px;
-  right: 6px;
+  top: 146px;
+  right: 0;
   transform: rotate(6deg);
 }
 
 .photo-three {
-  bottom: 8px;
-  left: 62px;
+  bottom: 20px;
+  left: 72px;
   transform: rotate(-1deg);
 }
 
@@ -698,13 +679,12 @@ h1 {
   }
 
   .memory-stack {
-    min-height: 430px;
+    min-height: 410px;
     order: -1;
   }
 
   .memory-photo {
-    width: min(68%, 290px);
-    min-height: 176px;
+    width: min(70%, 320px);
   }
 
   .countdown {
@@ -751,35 +731,28 @@ h1 {
   }
 
   .memory-stack {
-    min-height: 360px;
-  }
-
-  .memory-stack::before {
-    inset: 50px 18px 40px;
+    min-height: 390px;
   }
 
   .memory-photo {
     width: 72%;
-    min-height: 142px;
-    border-width: 8px;
-    border-bottom-width: 38px;
-  }
-
-  .memory-photo figcaption {
-    bottom: -30px;
-    font-size: 0.95rem;
+    filter: drop-shadow(0 18px 30px rgba(0, 0, 0, 0.3));
   }
 
   .photo-one {
-    top: 12px;
+    top: 4px;
+    left: 0;
   }
 
   .photo-two {
-    top: 116px;
+    top: 104px;
+    right: 0;
   }
 
   .photo-three {
-    left: 42px;
+    top: 178px;
+    left: 36px;
+    bottom: auto;
   }
 
   .count-card {
