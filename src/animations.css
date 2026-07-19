@@ -5,9 +5,6 @@ h1 { animation: titleReveal 900ms ease 120ms both; }
 .hero-actions { animation: riseIn 760ms ease 340ms both; }
 .memory-stack { animation: photoStackIn 860ms ease 140ms both; }
 .memory-stack::before { animation: slowTilt 8s ease-in-out infinite; }
-.photo-one { animation: floatPhotoOne 6.8s ease-in-out infinite; }
-.photo-two { animation: floatPhotoTwo 7.4s ease-in-out 450ms infinite; }
-.photo-three { animation: floatPhotoThree 7s ease-in-out 900ms infinite; }
 .countdown-band { position: relative; overflow: hidden; animation: riseIn 760ms ease 280ms both; }
 .reunion-quote, .rsvp-panel, .vote-panel { animation: riseIn 760ms ease both; }
 .notice { animation: noticePop 260ms ease both; }
