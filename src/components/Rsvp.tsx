@@ -72,7 +72,7 @@ export function Rsvp() {
     if (result.ok) {
       setAttendees((currentAttendees) => [...currentAttendees, result.attendee]);
       setName("");
-      setNotice({ type: "success", message: `${result.attendee.name} is confirmed. We cannot wait to see you.` });
+      setNotice({ type: "success", message: `${result.attendee.name.toLocaleUpperCase("en-US")} is confirmed. We cannot wait to see you.` });
     } else {
       setNotice({ type: "error", message: result.message });
     }
@@ -124,7 +124,7 @@ export function Rsvp() {
         ) : attendees.length > 0 ? (
           <ul>
             {attendees.map((attendee) => (
-              <li key={attendee.id}>{attendee.name}</li>
+              <li key={attendee.id}>{attendee.name.toLocaleUpperCase("en-US")}</li>
             ))}
           </ul>
         ) : (
