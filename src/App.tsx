@@ -10,7 +10,7 @@ function App() {
       <section className="hero" aria-labelledby="main-heading">
         <div className="hero-copy-block">
           <p className="school-kicker">Nehru Children Model School - Batch of 2005-2006</p>
-          <h1 id="main-heading">We&apos;re Meeting Again</h1>
+          <h1 id="main-heading">School Reunion 2026</h1>
           <p className="supporting-message">
             Old friends, unforgettable memories, and one special reunion. The countdown has officially begun.
           </p>
@@ -85,12 +85,12 @@ function App() {
         </article>
       </section>
 
-      <div className="section-divider">Confirm your place</div>
+      <div className="section-divider">Confirm your place - Reunion 2026</div>
       <div id="rsvp">
         <Rsvp />
       </div>
 
-      <div className="section-divider">Choose the reunion day</div>
+      <div className="section-divider">Choose the 2026 reunion day</div>
       <DateVote />
 
       <section className="memory-preview" aria-label="Upcoming memory features">
@@ -106,7 +106,7 @@ function App() {
         </div>
       </section>
 
-      <footer className="site-footer">Nehru Children Model School - Batch of 2005-2006 - See you again soon.</footer>
+      <footer className="site-footer">Nehru Children Model School - Batch of 2005-2006 - Reunion 2026 - See you again soon.</footer>
     </main>
   );
 }
