@@ -10,9 +10,9 @@ function App() {
       <section className="hero" aria-labelledby="main-heading">
         <div className="hero-copy-block">
           <p className="school-kicker">Nehru Children Model School - Batch of 2005-2006</p>
-          <h1 id="main-heading">School Reunion 2026</h1>
+          <h1 id="main-heading">Back Together <em>in 2026.</em></h1>
           <p className="supporting-message">
-            Old friends, unforgettable memories, and one special reunion. The countdown has officially begun.
+            From classroom benches to different corners of the world — our story continues. Nehru Children Model School, Class of 2005–2006.
           </p>
 
           <div className="hero-actions" aria-label="Primary actions">
@@ -25,27 +25,27 @@ function App() {
           </div>
         </div>
 
-        <div className="memory-stack" aria-label="School memory photos">
+        <div className="memory-stack" aria-label="Illustrated school memories">
           <figure className="memory-photo photo-one">
             <img
               src="/memories/classroom-laughter.jpg"
               alt="Illustrated classmates smiling together inside a classroom"
             />
-            <figcaption>Classroom Laughter</figcaption>
+            <figcaption>Illustration · Classroom laughter</figcaption>
           </figure>
           <figure className="memory-photo photo-two">
             <img
               src="/memories/friends-forever.jpg"
               alt="Illustrated classmates posing together outside Class VIII-B"
             />
-            <figcaption>Friends Forever</figcaption>
+            <figcaption>Illustration · Friends forever</figcaption>
           </figure>
           <figure className="memory-photo photo-three">
             <img
               src="/memories/schoolyard-memories.jpg"
               alt="Illustrated classmates standing together in the schoolyard"
             />
-            <figcaption>Schoolyard Memories</figcaption>
+            <figcaption>Illustration · Schoolyard memories</figcaption>
           </figure>
         </div>
       </section>
@@ -57,7 +57,7 @@ function App() {
         </div>
         <Countdown />
         <div className="event-details" aria-label="Event details">
-          <span>One-day reunion</span>
+          <span>Our first annual reunion</span>
           <span>Final day by class vote</span>
           <span>Venue to be announced</span>
         </div>
@@ -85,7 +85,7 @@ function App() {
         </article>
       </section>
 
-      <div className="section-divider">Confirm your place - Reunion 2026</div>
+      <div className="section-divider">The Class of 2005–2006 · Reunion 2026</div>
       <div id="rsvp">
         <Rsvp />
       </div>
@@ -96,13 +96,13 @@ function App() {
       <section className="memory-preview" aria-label="Upcoming memory features">
         <div>
           <span className="eyebrow">Coming next</span>
-          <h2>Memory Wall</h2>
-          <p>A simple place for classmates to share school memories, old photos, and messages for the batch.</p>
+          <h2>Our Memory Wall</h2>
+          <p>A place for the stories, nicknames and little moments we still remember. No old photos needed to get started.</p>
         </div>
         <div>
           <span className="eyebrow">Coming next</span>
-          <h2>Then &amp; Now Gallery</h2>
-          <p>Old class pictures and new reunion photos can live together here after the plan is finalized.</p>
+          <h2>A Tradition Begins</h2>
+          <p>2026 is chapter one. Every year, we’ll add another reunion and another page to our story.</p>
         </div>
       </section>
 
