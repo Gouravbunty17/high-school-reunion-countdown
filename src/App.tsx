@@ -1,6 +1,7 @@
 import { Countdown } from "./components/Countdown";
 import { DateVote } from "./components/DateVote";
 import { Rsvp } from "./components/Rsvp";
+import { MemoryWall } from "./components/MemoryWall";
 
 const whatsappUrl = "https://chat.whatsapp.com/JFjeldlop2XEuXBUl6OO6R?s=qt&p=a&ilr=4&amv=3";
 
@@ -93,11 +94,12 @@ function App() {
       <div className="section-divider">Choose the 2026 reunion day</div>
       <DateVote />
 
-      <section className="memory-preview" aria-label="Upcoming memory features">
+      <MemoryWall />
+\n      <section className="memory-preview" aria-label="Upcoming memory features">
         <div>
           <span className="eyebrow">Coming next</span>
-          <h2>Our Memory Wall</h2>
-          <p>A place for the stories, nicknames and little moments we still remember. No old photos needed to get started.</p>
+          <h2>Memories Worth Keeping</h2>
+          <p>Add your favourite school story above. Together we can build a memory book that grows with every reunion.</p>
         </div>
         <div>
           <span className="eyebrow">Coming next</span>
