@@ -759,3 +759,58 @@ h1 {
     width: 100%;
   }
 }
+
+
+/* Reunion yearbook refresh — visual-only; RSVP and voting logic unchanged */
+:root { color: #fdf1dc; background: #101c27; }
+body {
+  background:
+    radial-gradient(ellipse at 12% 4%, rgba(196,115,68,.22), transparent 38%),
+    radial-gradient(ellipse at 94% 36%, rgba(95,126,117,.19), transparent 40%),
+    linear-gradient(165deg, #10232d 0%, #162c33 47%, #0e1c28 100%);
+}
+body::before {
+  opacity: .13;
+  background-image: repeating-linear-gradient(0deg, rgba(255,245,220,.11) 0 1px, transparent 1px 5px);
+  background-size: auto;
+}
+.hero { min-height: 680px; gap: clamp(30px,5vw,65px); }
+.school-kicker { border-color: rgba(236,194,130,.55); background: rgba(236,194,130,.09); color: #f6d6a3; }
+h1 { font-size: clamp(3.6rem,8.2vw,7.7rem); line-height: .98; letter-spacing: -.045em; }
+h1 em { display: block; color: #f5bf80; font-style: italic; font-weight: 500; }
+.supporting-message { max-width: 560px; color: #e0e0d4; }
+.hero-button, .countdown-band, .count-card, .story-grid article, .memory-preview > div, .rsvp-panel, .vote-panel, .attendee-list, .vote-results { border-radius: 20px; }
+.hero-button.primary, .input-row button, .vote-form button { background: linear-gradient(135deg,#f6d49b,#e8a979); }
+.memory-stack { gap: 16px; }
+.memory-photo {
+  padding: 9px 9px 35px;
+  border-radius: 3px;
+  background: #f6edda;
+  box-shadow: 0 24px 55px rgba(0,0,0,.3);
+}
+.memory-photo img { aspect-ratio: 4 / 3; object-fit: cover; }
+.memory-photo figcaption {
+  position: static; width: auto; height: auto; margin: 10px 0 -25px;
+  padding: 0; overflow: visible; clip: auto; white-space: normal;
+  text-align: center; font-family: Georgia,serif; font-style: italic;
+  color: #625343; font-size: .84rem;
+}
+.photo-three { width: min(75%,390px); }
+.countdown-band { border-color: rgba(246,212,155,.35); }
+.count-value, .attendee-summary strong, .vote-result strong { color: #f6d49b; }
+.reunion-quote { border-left-color: #e8a979; }
+.reunion-quote p { color: #f5dbaf; }
+.story-grid article { transition: transform .2s ease, border-color .2s ease; }
+.story-grid article:hover { transform: translateY(-4px); border-color: rgba(246,212,155,.42); }
+.attendee-list li { border-radius: 12px; background: rgba(246,212,155,.1); }
+@media(max-width:860px) { .hero { min-height: auto; } }
+@media(max-width:560px) {
+  h1 { font-size: clamp(3.25rem,13vw,5rem); }
+  .memory-stack { max-width: 430px; margin-inline: auto; }
+  .memory-photo { padding: 6px 6px 30px; }
+  .memory-photo figcaption { font-size: .7rem; }
+}
+@media(prefers-reduced-motion:reduce) {
+  .count-card { animation: none; }
+  .story-grid article, .hero-button { transition: none; }
+}
