@@ -95,7 +95,7 @@ function App() {
       <DateVote />
 
       <MemoryWall />
-\n      <section className="memory-preview" aria-label="Upcoming memory features">
+      <section className="memory-preview" aria-label="Upcoming memory features">
         <div>
           <span className="eyebrow">Coming next</span>
           <h2>Memories Worth Keeping</h2>
