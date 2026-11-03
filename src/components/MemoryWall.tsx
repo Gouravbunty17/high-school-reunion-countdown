@@ -28,8 +28,8 @@ export function MemoryWall() {
     if (busy) return;
     const cleanName = name.trim().replace(/\s+/g, " ");
     const cleanMemory = memory.trim().replace(/\s+/g, " ");
-    if (cleanName.length < 2 || cleanName.length > 80 || cleanMemory.length < 10 || cleanMemory.length > 500) {
-      setNotice("Please enter your name and a memory between 10 and 500 characters.");
+    if (cleanName.length < 2 || cleanName.length > 80 || cleanMemory.length < 10 || cleanMemory.length > 3000) {
+      setNotice("Please enter your name and a memory between 10 and 3,000 characters.");
       return;
     }
     setBusy(true);
@@ -55,8 +55,8 @@ export function MemoryWall() {
         <label htmlFor="memory-name">Your name</label>
         <input id="memory-name" value={name} onChange={e => setName(e.target.value)} maxLength={80} required placeholder="Your name" />
         <label htmlFor="memory-text">Your school memory</label>
-        <textarea id="memory-text" value={memory} onChange={e => setMemory(e.target.value)} maxLength={500} minLength={10} rows={4} required placeholder="I still remember when..." />
-        <div className="memory-form-footer"><span>{memory.length}/500</span><button disabled={busy || error} type="submit">{busy ? "Submitting..." : "Share a memory"}</button></div>
+        <textarea id="memory-text" value={memory} onChange={e => setMemory(e.target.value)} maxLength={3000} minLength={10} rows={4} required placeholder="I still remember when..." />
+        <div className="memory-form-footer"><span>{memory.length}/3000</span><button disabled={busy || error} type="submit">{busy ? "Submitting..." : "Share a memory"}</button></div>
         {notice && <p className="muted" role="status">{notice}</p>}
       </form>
       <div className="memory-cards" aria-live="polite">
